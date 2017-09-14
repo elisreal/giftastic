@@ -40,20 +40,20 @@ $(document).ready(function() {
 			search.done(function(data) {
 				console.log(data);
 				for (i = 0; i < data.data.length; i++) {
-					$('#display').append("<img src=" + data.data[i].images.fixed_height_still.url + ">");
-				}
+					$('#display').append("<img src='" + data.data[i].images.downsized_still.url + "' data-gifurl='" + data.data[i].images.downsized.url + "'>");
+				};
 			});
 	});
+
+	$("img").on('click', function() {
+		console.log("I am working");
+        $(this).data("src", data-gifurl);
+    });
+
 	$("button").click(function() {
 		$('#display').empty();
 	});
 
+
 });
 
-
-
-
-// var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5");
-// xhr.done(function(data) { 
-// 	console.log("success got data", data); 
-// });
