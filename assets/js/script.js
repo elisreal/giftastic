@@ -28,32 +28,59 @@ $(document).ready(function() {
 
 	buttons = ["Michael Scott", "Dwight Schrute", "Jim Halpert", "Pam Halpert", "Stanley Hudson", "Andy Bernard", "Creed Bratton", "Kevin Malone", "Angela Martin", "Oscar Martinez", "Meredith Palmer", "Darryl Philbin"];
 
-	for (i = 0; i < buttons.length; i++) { 
-		$('#buttons').append("<button class='btn btn-default btn-lg btn-primary'>" + buttons[i] + "</button>");
-	    console.log(buttons);
+	function renderButtons() {
+		$('#buttons').empty();
+		for (i = 0; i < buttons.length; i++) { 
+			$('#buttons').append("<button class='btn btn-default btn-lg btn-primary'>" + buttons[i] + "</button>");
+		    console.log(buttons);
+		}
 	}
 
-	$("button").click(function() {
-		var value = $(this).text();
-		var searchPhrase = value.replace(" ", "+");
-		var search = $.get(api + searchPhrase + key + limit);
+	$("#add-button").on("click", function(event) {
+        event.preventDefault();
+        var button = $("#button-input").val().trim();
+        buttons.push(button);
+        renderButtons();
+        getGifs();
+    });	
+
+	function getGifs() {
+		$("button").click(function() {
+			var value = $(this).text();
+			var searchPhrase = value.replace(" ", "+");
+			var search = $.get(api + searchPhrase + key + limit);
 			search.done(function(data) {
 				console.log(data);
 				for (i = 0; i < data.data.length; i++) {
-					$('#display').append("<img src='" + data.data[i].images.downsized_still.url + "' data-gifurl='" + data.data[i].images.downsized.url + "'>");
+					$('#display').append("<img src='" + data.data[i].images.downsized_still.url + "' data-gifurl='" + data.data[i].images.downsized.url + "' data-stillurl='" + data.data[i].images.downsized_still.url + "'>");
 				};
+	 
+				$("img").click(function() {
+					console.log("im working");
+	                var gifurl = $(this).data('gifurl');
+	                var stillurl = $(this).data('stillurl');
+
+	                if ($(this).attr('src') == stillurl) {
+	                    $(this).attr('src', gifurl);
+	                }
+	                else {
+	                    $(this).attr('src', stillurl);
+	                    }
+	            });				
 			});
-	});
+		});
 
-	$("img").on('click', function() {
-		console.log("I am working");
-        $(this).data("src", data-gifurl);
-    });
+		$("button").click(function() {
+			$('#display').empty();
+		});
+	}
 
-	$("button").click(function() {
-		$('#display').empty();
-	});
+	
 
+
+
+renderButtons();
+getGifs();
 
 });
 
