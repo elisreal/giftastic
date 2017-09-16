@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>The Office Giftastic</title>
 
+    <!-- Google Font Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -26,27 +29,30 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<div id="header">
+					<div class="jumbotron">
+						<h1 class="header text-center">Officetastic</h1>
 					</div>
 				</div>
 			</div>
 			<div class="row text-center">
-				<div class="col-lg-12">
+			<div class="col-lg-12 text-center">
+					<form id="newButtonForm">
+      					<label for="button-input">Add a Button</label><br>
+      					<input type="text" id="button-input"><br>
+						<input id="add-button" type="submit" value="Add a Button">
+    				</form>
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-lg-12 btnContainer">
 					<div id="buttons">
 					</div>
 				</div>
 			</div>
 			<div class="row text-center">
-				<div class="col-md-8">
+				<div class="col-lg-12">
 					<div id="display">
 					</div>
-				</div>
-				<div class="col-sm-4">
-					<form id="newButtonForm">
-      					<label for="button-input">Add a Button</label>
-      					<input type="text" id="button-input"><br>
-						<input id="add-button" type="submit" value="Add a Button">
-    				</form>
 				</div>
 			</div>
 		</div>

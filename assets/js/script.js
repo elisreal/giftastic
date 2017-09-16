@@ -15,7 +15,7 @@
 var api = "http://api.giphy.com/v1/gifs/search?q=";
 var value = "";
 var key = "&api_key=0f5692156c7f440686a431587ec6d8ee"
-var limit = "&limit=10"
+var limit = "&limit=9"
 var buttons = [];
 var thumbnails = {};
 
@@ -52,7 +52,7 @@ $(document).ready(function() {
 			search.done(function(data) {
 				console.log(data);
 				for (i = 0; i < data.data.length; i++) {
-					$('#display').append("<img src='" + data.data[i].images.downsized_still.url + "' data-gifurl='" + data.data[i].images.downsized.url + "' data-stillurl='" + data.data[i].images.downsized_still.url + "'>");
+					$('#display').append("<img class='gifImg' src='" + data.data[i].images.downsized_still.url + "' data-gifurl='" + data.data[i].images.downsized.url + "' data-stillurl='" + data.data[i].images.downsized_still.url + "'>");
 				};
 	 
 				$("img").click(function() {
@@ -74,10 +74,6 @@ $(document).ready(function() {
 			$('#display').empty();
 		});
 	}
-
-	
-
-
 
 renderButtons();
 getGifs();
