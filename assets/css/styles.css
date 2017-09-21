@@ -41,7 +41,17 @@ button.btn.btn-default.btn-lg.btn-primary {
 	background-color: #FFF;
 	color: #777;
 	font-family: 'Roboto Mono', monospace;
-	font-size: 16px;
+	font-size: 13px;
+}
+
+button.btn.btn-default.btn-lg.btn-primary:hover {
+	margin: 5px;
+	border-radius: 24px;
+	border-color: #DDDDDD;
+	background-color: #777;
+	color: #fff;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 13px;
 }
 
 div.col-lg-12.btnContainer {
@@ -58,16 +68,24 @@ div.col-lg-12.btnContainer {
 	padding: 30px 0px;
 }
 
+div.col-lg-12.imgs {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10%;
+}
+
 #display {
 	padding: 30px 0px;
 	margin: auto;
 	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 label {
 	color: #777;
 	font-family: 'Roboto Mono', monospace;
-	font-size: 1rem;
+	font-size: 16px;
 	padding-bottom: 10px;
 }
 
@@ -96,22 +114,22 @@ input#add-button {
 }
 
 div.jumbotron {
-	/* background-image: url("../images/bg.jpg");
+	background-image: url("../images/bg.jpg");
 	background-size: 100%;
-	padding: 200px 100px;
-	*/
-	background-color: aqua;
+	background-position: top;
+	background-repeat: no-repeat;
+	/*background-color: aqua;
     background: linear-gradient(#FFDC00, #01FF70, #B10DC9);
     background-size: 100% 1800%;
     -webkit-animation: rainbow 5s ease infinite;
     -z-animation: rainbow 5s ease infinite;
     -o-animation: rainbow 5s ease infinite;
-    animation: rainbow 5s ease infinite;
+    animation: rainbow 5s ease infinite;*/
    	margin-bottom: 0px;
-   	padding: 80px 0px;
+   	padding: 150px 0px;
 }
 
-@-webkit-keyframes rainbow {
+/*@-webkit-keyframes rainbow {
     0%{background-position:0% 82%}
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
@@ -133,7 +151,7 @@ div.jumbotron {
     0%{background-position:0% 82%}
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
-}
+}*/
 
 
 h1.header.text-center {
@@ -168,6 +186,7 @@ p {
 	padding-bottom: 10px;
 	float: none;
 	display: inline;
+	text-transform: uppercase;
 }
 
 .rating {

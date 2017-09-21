@@ -15,7 +15,7 @@
 var api = "http://api.giphy.com/v1/gifs/search?q=";
 var value = "";
 var key = "&api_key=0f5692156c7f440686a431587ec6d8ee"
-var limit = "&limit=9"
+var limit = "&limit=12"
 var buttons = [];
 var thumbnails = {};
 
