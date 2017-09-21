@@ -11,6 +11,11 @@ main {
     border-radius: 0;
 }
 
+.row {
+	margin-right: 0;
+	margin-left: 0;
+}
+
 .container {
 	width: 100%;
 	padding: 0px;
