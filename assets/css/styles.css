@@ -7,6 +7,11 @@ main {
 	padding: 0px;
 }
 
+.row {
+	margin-right: 0;
+	margin-left: 0;
+}
+
 .container .jumbotron {
     border-radius: 0;
 }
