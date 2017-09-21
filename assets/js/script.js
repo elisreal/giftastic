@@ -52,7 +52,8 @@ $(document).ready(function() {
 			search.done(function(data) {
 				console.log(data);
 				for (i = 0; i < data.data.length; i++) {
-					$('#display').append("<img class='gifImg' src='" + data.data[i].images.downsized_still.url + "' data-gifurl='" + data.data[i].images.downsized.url + "' data-stillurl='" + data.data[i].images.downsized_still.url + "'>");
+					var ratingsSpan = ("<div class='rating'><p>Rated: <span id='gifRatings'>" + data.data[i].rating + "</span></p></div>");
+					$('#display').append("<div class='imgDiv text-center'><div class='image'><img class='gifImg' src='" + data.data[i].images.downsized_still.url + "' data-gifurl='" + data.data[i].images.downsized.url + "' data-stillurl='" + data.data[i].images.downsized_still.url + "'></div>" + ratingsSpan + "</div>");
 				};
 	 
 				$("img").click(function() {
