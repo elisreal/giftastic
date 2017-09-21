@@ -205,3 +205,13 @@ p {
 	float: none;
 	margin-top: -3px;
 }
+
+div.footer {
+	width: 100%;
+	background-color: #FFF;
+	padding: 15px 0px;
+}
+
+img.giphyLogo {
+	width: 150px;
+}
